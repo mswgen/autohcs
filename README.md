@@ -32,4 +32,6 @@
 
 다운로드 후 처음 실행하는 경우 `yarn`, `yarn build`를 순서대로 입력해주세요.
 
-실행하려면 `yarn start`를 입력해주세요.
+macOS, Linux의 경우 터미널에서 `chmod +x run.sh`를 실행해주세요.
+
+실행하려면 Windows의 경우 run.cmd를 더블클릭해 실행해주세요. macOS, Linux의 경우 터미널에서 `./run.sh`를 입력해 실행해주세요.
