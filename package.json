@@ -1,0 +1,23 @@
+{
+  "name": "autohcs",
+  "version": "1.0.0",
+  "description": "Automatic self diagnosics(hcs)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mswgen/autohcs.git"
+  },
+  "keywords": [
+    "hcs",
+    "auto"
+  ],
+  "author": "mswgen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mswgen/autohcs/issues"
+  },
+  "homepage": "https://github.com/mswgen/autohcs#readme"
+}
