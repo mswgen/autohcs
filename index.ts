@@ -34,7 +34,7 @@ puppeteer.launch({
     await page.select('#crseScCode', config.grade);
     await page.type('#orgname', config.schoolName);
     await page.click('.searchBtn');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1500);
     await page.click('.layerSchoolArea > li > a');
     await page.click('.layerFullBtn');
     await page.waitForTimeout(500);
