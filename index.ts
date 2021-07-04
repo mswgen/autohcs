@@ -58,9 +58,9 @@ puppeteer.launch({
     await page.waitForTimeout(1000);
     process.stdout.write(`\r\x1b[32m[5/6] successfully completed diagnosics!\x1b[0m${newline()}`);
     process.stdout.write(`\x1b[0m[6/6] taking screenshot ...`);
-    const doneTime = new Date();
+    const doneTime = new Date()
     await page.screenshot({
-        path: `./diagnosics-${doneTime.getFullYear()}-${doneTime.getMonth()}-${doneTime.getDate()}.png`,
+        path: `./diagnosics-${doneTime.getFullYear()}/${doneTime.getMonth()}/${doneTime.getDate()}_${doneTime.getHours()}:${doneTime.getMinutes()}:${doneTime.getSeconds()}.png`,
         fullPage: true
     });
     process.stdout.write(`\r\x1b[32m[6/6] successfully took screenshot!\x1b[0m${newline()}`);
