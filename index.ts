@@ -49,7 +49,7 @@ puppeteer.launch({
     await page.waitForTimeout(2000);
     process.stdout.write(`\r\x1b[32m[4/6] successfully typed your password!\x1b[0m${newline()}`);
     process.stdout.write(`\x1b[0m[5/6] completing diagnosics ...`);
-    await page.click('.active > a');
+    await page.click('a[href="#"]');
     await page.waitForTimeout(2000);
     await page.click('#survey_q1a1');
     await page.click('#survey_q2a1');
