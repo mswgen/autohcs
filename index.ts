@@ -18,7 +18,7 @@ function sleep(time: number): Promise<void> {
 }
 process.stdout.write(`\x1b[0m[1/6] launching browser ...`);
 puppeteer.launch({
-    headless: false,
+    headless: true,
     defaultViewport: {
         width: 1600,
         height: 900,
