@@ -65,7 +65,6 @@ puppeteer.launch({
     const passwd = config.passwd.split('').map((x:string) => parseInt(x))
     for (let passwdLetter of passwd) {
         await sleep(500)
-        console.log(keys[passwdLetter])
         await page.click(keys[passwdLetter])
     }
     await sleep(500)
