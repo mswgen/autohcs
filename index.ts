@@ -11,9 +11,14 @@ function newline() {
         return '\n';
     }
 }
+function sleep(time: number): Promise<void> {
+    return new Promise(resolve => {
+        setTimeout(resolve, time)
+    })
+}
 process.stdout.write(`\x1b[0m[1/6] launching browser ...`);
 puppeteer.launch({
-    headless: true,
+    headless: false,
     defaultViewport: {
         width: 1600,
         height: 900,
@@ -44,7 +49,26 @@ puppeteer.launch({
     await page.waitForTimeout(1500);
     process.stdout.write(`\r\x1b[32m[3/6] successfully typed your information!\x1b[0m${newline()}`);
     process.stdout.write(`\x1b[0m[4/6] typing password ...`);
-    await page.type('.input_text_common', config.passwd);
+    await page.click('#password');
+    const keys = [
+        '#password_mainDiv a[aria-label="0"]',
+        '#password_mainDiv a[aria-label="1"]',
+        '#password_mainDiv a[aria-label="2"]',
+        '#password_mainDiv a[aria-label="3"]',
+        '#password_mainDiv a[aria-label="4"]',
+        '#password_mainDiv a[aria-label="5"]',
+        '#password_mainDiv a[aria-label="6"]',
+        '#password_mainDiv a[aria-label="7"]',
+        '#password_mainDiv a[aria-label="8"]',
+        '#password_mainDiv a[aria-label="9"]'
+    ]
+    const passwd = config.passwd.split('').map((x:string) => parseInt(x))
+    for (let passwdLetter of passwd) {
+        await sleep(500)
+        console.log(keys[passwdLetter])
+        await page.click(keys[passwdLetter])
+    }
+    await sleep(500)
     await page.click('#btnConfirm');
     await page.waitForTimeout(2000);
     process.stdout.write(`\r\x1b[32m[4/6] successfully typed your password!\x1b[0m${newline()}`);
